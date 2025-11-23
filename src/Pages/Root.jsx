@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar';
 import Hero from '../Components/Hero';
 import { Outlet } from 'react-router';
 import Footer from '../Components/Footer';
+import Loading from "../Pages/Loading"; 
 
 const Root = () => {
     return (
@@ -10,7 +11,7 @@ const Root = () => {
             <header>
                 <Navbar></Navbar>
             </header>
-            <Suspense fallback={<span className="loading loading-spinner text-primary"></span>}>
+            <Suspense fallback={<Loading />}>
                 <Outlet></Outlet>
             </Suspense>
             <footer>

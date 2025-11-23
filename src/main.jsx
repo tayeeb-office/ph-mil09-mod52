@@ -14,6 +14,7 @@ import Resetpass from './Pages/Resetpass.jsx';
 import Error from './Pages/Error.jsx';
 import Profile from './Pages/Profile.jsx';
 import Update from './Pages/Update.jsx';
+import Loading from './Pages/Loading.jsx';
 
 const router = createBrowserRouter([
   {

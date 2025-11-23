@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import Hero from "../Components/Hero";
 import Newsletter from "../Components/Newsletter";
 
+
 const dataPromise = fetch("/popular.json").then((res) => res.json());
 
 const Home = () => {
