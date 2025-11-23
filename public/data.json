@@ -1,0 +1,102 @@
+[
+  {
+    "id": "1",
+    "title": "Player Unknowns Battle Ground: PUBG",
+    "coverPhoto": "https://i.ibb.co.com/pBtS4Xhy/banner01.jpg",
+    "category": "FPS",
+    "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
+    "description": "PUBG Mobile is a fast-paced battle royale game where players fight for survival, strategy, and victory on dynamic maps.",
+    "ratings": 4.0,
+    "developer": "Krafton"
+  },
+  {
+    "id": "2",
+    "title": "Call of Duty: Mobile",
+    "coverPhoto": "https://i.ibb.co.com/ynVLCBh9/banner02.jpg",
+    "category": "FPS",
+    "downloadLink": "https://www.callofduty.com/mobile",
+    "description": "COD Mobile delivers console-quality FPS gameplay with iconic maps, operators, and weapons in a mobile-friendly experience.",
+    "ratings": 4.7,
+    "developer": "Activision"
+  },
+  {
+    "id": "3",
+    "title": "Clash of Clans",
+    "coverPhoto": "https://i.ibb.co.com/sJ5h8dQ0/banner03.jpg",
+    "category": "Strategy",
+    "downloadLink": "https://supercell.com/en/games/clashofclans/",
+    "description": "Build your village, raise a clan, and compete in epic Clan Wars in this all-time favorite strategy game.",
+    "ratings": 4.6,
+    "developer": "Supercell"
+  },
+  {
+    "id": "4",
+    "title": "Genshin Impact",
+    "coverPhoto": "https://i.ibb.co.com/KzNhh7VC/banner04.jpg",
+    "category": "Adventure",
+    "downloadLink": "https://genshin.hoyoverse.com/",
+    "description": "Explore the fantasy world of Teyvat, harness elemental powers, and embark on epic adventures across stunning landscapes.",
+    "ratings": 4.8,
+    "developer": "HoYoverse"
+  },
+  {
+    "id": "5",
+    "title": "Among Us",
+    "coverPhoto": "https://i.ibb.co.com/BVBJ2g03/banner06.jpg",
+    "category": "Social Deduction",
+    "downloadLink": "https://www.innersloth.com/games/among-us/",
+    "description": "Work together to complete tasks—but beware of impostors! A thrilling multiplayer game of teamwork and deception.",
+    "ratings": 4.3,
+    "developer": "Innersloth"
+  },
+   {
+    "id": "6",
+    "title": "Apex Legends Mobile",
+    "coverPhoto": "https://i.ibb.co.com/pBtS4Xhy/banner01.jpg",
+    "category": "FPS",
+    "downloadLink": "https://www.ea.com/games/apex-legends/apex-legends-mobile",
+    "description": "A tactical battle royale shooter featuring unique Legends, abilities, and squad-based gameplay for mobile.",
+    "ratings": 4.4,
+    "developer": "Respawn Entertainment"
+  },
+  {
+    "id": "7",
+    "title": "Minecraft",
+    "coverPhoto": "https://i.ibb.co.com/ynVLCBh9/banner02.jpg",
+    "category": "Sandbox",
+    "downloadLink": "https://www.minecraft.net/",
+    "description": "Build, explore, and survive in a blocky, procedurally generated world filled with adventure and creativity.",
+    "ratings": 4.9,
+    "developer": "Mojang Studios"
+  },
+  {
+    "id": "8",
+    "title": "League of Legends: Wild Rift",
+    "coverPhoto": "https://i.ibb.co.com/sJ5h8dQ0/banner03.jpg",
+    "category": "MOBA",
+    "downloadLink": "https://wildrift.leagueoflegends.com/",
+    "description": "Experience the classic League of Legends gameplay redesigned for mobile — fast-paced 5v5 battles and strategic teamplay.",
+    "ratings": 4.0,
+    "developer": "Riot Games"
+  },
+  {
+    "id": "9",
+    "title": "Candy Crush Saga",
+    "coverPhoto": "https://i.ibb.co.com/KzNhh7VC/banner04.jpg",
+    "category": "Puzzle",
+    "downloadLink": "https://king.com/game/candycrush",
+    "description": "Match colorful candies and solve hundreds of fun, challenging puzzles in this iconic match-3 game.",
+    "ratings": 4.6,
+    "developer": "King"
+  },
+  {
+    "id": "10",
+    "title": "Mobile Legends: Bang Bang",
+    "coverPhoto": "https://i.ibb.co.com/BVBJ2g03/banner06.jpg",
+    "category": "MOBA",
+    "downloadLink": "https://m.mobilelegends.com/",
+    "description": "Join 5v5 real-time battles, select your hero, and compete to destroy the enemy base in this popular mobile MOBA.",
+    "ratings": 4.3,
+    "developer": "Moonton"
+  }
+]

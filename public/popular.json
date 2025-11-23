@@ -1,0 +1,53 @@
+[
+  
+  {
+    "id": "2",
+    "title": "Call of Duty: Mobile",
+    "coverPhoto": "https://i.ibb.co.com/pBtS4Xhy/banner01.jpg",
+    "category": "FPS",
+    "downloadLink": "https://www.callofduty.com/mobile",
+    "description": "COD Mobile delivers console-quality FPS gameplay with iconic maps, operators, and weapons in a mobile-friendly experience.",
+    "ratings": 4.7,
+    "developer": "Activision"
+  },
+  {
+    "id": "3",
+    "title": "Clash of Clans",
+    "coverPhoto": "https://i.ibb.co.com/ynVLCBh9/banner02.jpg",
+    "category": "Strategy",
+    "downloadLink": "https://supercell.com/en/games/clashofclans/",
+    "description": "Build your village, raise a clan, and compete in epic Clan Wars in this all-time favorite strategy game.",
+    "ratings": 4.6,
+    "developer": "Supercell"
+  },
+  {
+    "id": "4",
+    "title": "Genshin Impact",
+    "coverPhoto": "https://i.ibb.co.com/sJ5h8dQ0/banner03.jpg",
+    "category": "Adventure",
+    "downloadLink": "https://genshin.hoyoverse.com/",
+    "description": "Explore the fantasy world of Teyvat, harness elemental powers, and embark on epic adventures across stunning landscapes.",
+    "ratings": 4.8,
+    "developer": "HoYoverse"
+  },
+  {
+    "id": "7",
+    "title": "Minecraft",
+    "coverPhoto": "https://i.ibb.co.com/KzNhh7VC/banner04.jpg",
+    "category": "Sandbox",
+    "downloadLink": "https://www.minecraft.net/",
+    "description": "Build, explore, and survive in a blocky, procedurally generated world filled with adventure and creativity.",
+    "ratings": 4.9,
+    "developer": "Mojang Studios"
+  },
+  {
+    "id": "9",
+    "title": "Candy Crush Saga",
+    "coverPhoto": "https://i.ibb.co.com/BVBJ2g03/banner06.jpg",
+    "category": "Puzzle",
+    "downloadLink": "https://king.com/game/candycrush",
+    "description": "Match colorful candies and solve hundreds of fun, challenging puzzles in this iconic match-3 game.",
+    "ratings": 4.6,
+    "developer": "King"
+  }
+]
