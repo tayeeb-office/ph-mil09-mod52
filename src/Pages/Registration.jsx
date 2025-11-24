@@ -1,12 +1,31 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router";
 import { MdOutlineDownloadDone } from "react-icons/md";
+import { AuthContext } from "../Provider/Provider";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const {register} = useContext(AuthContext);
+
+  const handelSubmit = (e) =>{
+    e.preventDefault();
+    
+    const email = e.target.email.value ;
+    const pass = e.target.pass.value ;
+
+    register(email,pass)
+    .then((userCredential) => {
+    const user = userCredential.user;
+    console.log(user);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+  }
 
   return (
     <div>
@@ -18,12 +37,12 @@ const Registration = () => {
                 <p className="text-[14px] mt-2 text-slate-400">Join the underground to discover and support new games.</p>
               </div>
     
-              <form className="mt-8 space-y-5">
+              <form onSubmit={handelSubmit} className="mt-8 space-y-5">
 
                 {/* Username */}
                 <div className="space-y-2 flex flex-col gap-1">
                   <label className="text-sm font-semibold text-white">Username</label>
-                  <input
+                  <input name = "username"
                     type="text"
                     placeholder="Write username here"
                     className="w-full h-12 rounded-lg bg-[#0E1B33] text-slate-200 placeholder:text-slate-500 px-4 "
@@ -34,7 +53,7 @@ const Registration = () => {
                 <div className="space-y-2 flex flex-col gap-1">
                   <label className="text-sm font-semibold text-white">Email Address</label>
                   <input
-                    type="email"
+                    type="email" name = "email"
                     placeholder="you@example.com"
                     className="w-full h-12 rounded-lg bg-[#0E1B33] text-slate-200 placeholder:text-slate-500 px-4 "
                   />
@@ -44,7 +63,7 @@ const Registration = () => {
                 <div className="space-y-2 flex flex-col gap-1">
                   <label className="text-sm font-semibold text-white">Photo URL</label>
                   <input
-                    type="text"
+                    type="text" name = "imageLink"
                     placeholder="Write image link here"
                     className="w-full h-12 rounded-lg bg-[#0E1B33] text-slate-200 placeholder:text-slate-500 px-4 "
                   />
@@ -54,7 +73,7 @@ const Registration = () => {
                 <div className="space-y-2 flex flex-col gap-1">
                   <label className="text-sm font-semibold text-white">Password</label>
                   <div className="relative">
-                    <input
+                    <input name = "pass"
                       type={showPassword ? "text" : "password"}
                       placeholder="Write passoward here"
                       className="w-full h-12 rounded-lg bg-[#0E1B33] text-slate-200 placeholder:text-slate-500 px-4 pr-12 "
