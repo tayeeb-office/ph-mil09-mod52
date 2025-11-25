@@ -3,18 +3,21 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router";
-import { MdOutlineDownloadDone } from "react-icons/md";
 import { AuthContext } from "../Provider/Provider";
 import { updateProfile } from "firebase/auth";
 import auth from "../Firebase/firebase.config";
+import { ImCross } from "react-icons/im";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const [error, setError] = useState("");
 
   const { register, setUser, google } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
+  // const isValid = hasUpper && hasLower && hasSixChars;
 
   const handelSubmit = (e) => {
     e.preventDefault();
@@ -24,6 +27,23 @@ const Registration = () => {
 
     const username = e.target.username.value;
     const imageLink = e.target.imageLink.value;
+
+    setError("");
+
+  const uppercase = /[A-Z]/;
+  const lowercase = /[a-z]/;
+
+  if(pass.length <= 6){
+    return setError("Passoword should be more than 6 character")
+  }
+
+  else if(!uppercase.test(pass)){
+    return setError("Passoword should have atleast one uppercase")
+  }
+
+  else if(!lowercase.test(pass)){
+    return setError("Passoword should have atleast one lowercase")
+  }
 
     register(email, pass)
       .then((userCredential) => {
@@ -42,25 +62,21 @@ const Registration = () => {
       .catch((error) => {
         console.log(error);
       });
-
-      
   };
 
-    const googleSignup = () =>{
+  const googleSignup = () => {
     google()
-    .then(res => {
+      .then((res) => {
         const user = res.user;
         setUser(user);
         navigate("/");
       })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
       });
-  }
+  };
 
   // console.log(user);
-
-
 
   return (
     <div>
@@ -139,23 +155,9 @@ const Registration = () => {
             </div>
 
             {/* Pass Validation*/}
-            <div className=" text-[14px] text-red-300">
-              <p className="flex items-center gap-1">
-                {" "}
-                <MdOutlineDownloadDone />
-                One uppercase letter
-              </p>
-              <p className="flex items-center gap-1">
-                {" "}
-                <MdOutlineDownloadDone />
-                One lowercase character
-              </p>
-              <p className="flex items-center gap-1">
-                {" "}
-                <MdOutlineDownloadDone />
-                6+ characters
-              </p>
-            </div>
+                <p className="text-[14px] text-red-500">
+                  {error}
+                </p>
 
             {/* Submit */}
             <button
@@ -179,7 +181,6 @@ const Registration = () => {
             Already have an account?
             <Link to="/login">
               <span className="text-blue-500 hover:text-blue-400 cursor-pointer font-semibold">
-                {" "}
                 Log In
               </span>
             </Link>

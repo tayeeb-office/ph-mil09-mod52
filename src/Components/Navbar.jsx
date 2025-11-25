@@ -4,6 +4,7 @@ import logo from "../assets/logo.png";
 import { AuthContext } from "../Provider/Provider";
 import { signOut } from "firebase/auth";
 import auth from "../Firebase/firebase.config";
+import person from "../assets/person.png"
 
 const Navbar = () => {
 
@@ -103,7 +104,7 @@ const Navbar = () => {
                 <div className="w-10 rounded-full">
                   <img
                     alt="Tailwind CSS Navbar component"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                    src={user? user.photoURL : person}
                   />
                 </div>
               </div>
@@ -111,46 +112,68 @@ const Navbar = () => {
                 tabIndex="-1"
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow lg:hidden"
               >
+              
+              { user &&
+              <li>
+                <NavLink
+                  to="/profile"
+                  className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
+                >
+                  Profile
+                </NavLink>
+              </li>
+              }
+              
+              <li>
+                <NavLink
+                  to="/"
+                  className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/allgames"
+                  className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
+                >
+                  All Games
+                </NavLink>
+              </li>
+              
+              {
+                !user && 
                 <li>
-                  <NavLink
-                    to="/profile"
-                    className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
-                  >
-                    Profile
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/"
-                    className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
-                  >
-                    Home
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/allgames"
-                    className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
-                  >
-                    All Games
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/registration"
-                    className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
-                  >
-                    Registration
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/login"
-                    className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
-                  >
-                    Login
-                  </NavLink>
-                </li>
+                <NavLink
+                  to="/registration"
+                  className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
+                >
+                  Registration
+                </NavLink>
+              </li>
+              }
+                  
+              { !user &&
+              <li>
+                <NavLink
+                  to="/login"
+                  className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
+                >
+                  Login
+                </NavLink>
+              </li>
+              }              
+
+              { user &&
+              <li>
+                <NavLink
+                  onClick={handelSignOut}
+                  className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
+                >
+                  Log out
+                </NavLink>
+              </li>
+              }
               </ul>
             </div>
           </div>
