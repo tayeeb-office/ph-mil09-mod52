@@ -6,7 +6,6 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Root from './Pages/Root.jsx';
 import Home from './Pages/Home.jsx';
-import Details from './Pages/Details.jsx';
 import Allgames from './Pages/Allgames.jsx';
 import Login from './Pages/Login.jsx';
 import Registration from './Pages/Registration.jsx';
@@ -16,6 +15,7 @@ import Profile from './Pages/Profile.jsx';
 import Update from './Pages/Update.jsx';
 import Loading from './Pages/Loading.jsx';
 import Provider from './Provider/Provider.jsx';
+import GameDetails from './Pages/GameDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,11 +24,16 @@ const router = createBrowserRouter([
     children : [
       { index: true, 
         path : '/',
-        Component: Home
+        Component: Home,
       },
       {  
         path : '/allgames',
         Component: Allgames,
+      },
+      {  
+        path : '/game/:id',
+        Component : GameDetails,
+        loader : () => fetch("/popular.json")
       },
        {  
         path : '/registration',
@@ -55,13 +60,13 @@ const router = createBrowserRouter([
         Component: Error,
       }
     ]
-  },
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <StrictMode >
      <Provider>
       <RouterProvider router={router} />,
      </Provider>
-  </StrictMode>,
+  </StrictMode>
 )

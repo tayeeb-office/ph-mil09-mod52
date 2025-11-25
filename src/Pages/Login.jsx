@@ -11,7 +11,7 @@ const Login = () => {
   
   const [showPassword, setShowPassword] = useState(false);
 
-  const {setUser, user} = useContext(AuthContext);
+  const {setUser, user, google } = useContext(AuthContext);
 
   const handelSubmit = (e) => {
     e.preventDefault();
@@ -30,6 +30,17 @@ const Login = () => {
   };
 
   console.log(user)
+
+  const googleSignin = () =>{
+    google()
+    .then(res => {
+        const user = res.user;
+        setUser(user);
+      })
+      .catch((error) => {
+        console.log(error)
+      });
+  }
 
   return (
     <div>
@@ -102,7 +113,7 @@ const Login = () => {
 
             {/* Google Log in */}
             <button
-              type="button"
+              type="button" onClick={googleSignin}
               className="w-full h-12 rounded-lg bg-[#0E1B33] hover:bg-[#122241] text-white font-semibold flex items-center justify-center gap-3 "
             >
               <FcGoogle /> Continue with Google

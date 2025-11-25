@@ -11,7 +11,7 @@ import auth from "../Firebase/firebase.config";
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const { register, user, setUser } = useContext(AuthContext);
+  const { register, setUser, google } = useContext(AuthContext);
 
   const handelSubmit = (e) => {
     e.preventDefault();
@@ -32,15 +32,30 @@ const Registration = () => {
             setUser(userCredential.user);
           })
           .catch((error) => {
-            console.log(error)
+            console.log(error);
           });
       })
       .catch((error) => {
         console.log(error);
       });
+
+      
   };
 
+    const googleSignup = () =>{
+    google()
+    .then(res => {
+        const user = res.user;
+        setUser(user);
+      })
+      .catch((error) => {
+        console.log(error)
+      });
+  }
+
   // console.log(user);
+
+
 
   return (
     <div>
@@ -143,6 +158,15 @@ const Registration = () => {
               className="w-full h-11 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold "
             >
               Create Account
+            </button>
+
+            {/* Google Log in */}
+            <button
+              type="button"
+              onClick={googleSignup}
+              className="w-full h-12 rounded-lg bg-[#0E1B33] hover:bg-[#122241] text-white font-semibold flex items-center justify-center gap-3 "
+            >
+              <FcGoogle /> Continue with Google
             </button>
           </form>
 
