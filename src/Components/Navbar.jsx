@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router";
 import logo from "../assets/logo.png";
+import { AuthContext } from "../Provider/Provider";
 
 const Navbar = () => {
+
+  const { user } = useContext(AuthContext);
+
   return (
     <div className="md:w-6xl mx-auto py-[10px] bg-[#101622] sticky top-0 z-50 ">
       <div className="navbar flex justify-between items-center gap-11">
@@ -75,7 +79,6 @@ const Navbar = () => {
                 </div>
               </div>
               <ul
-                cla
                 tabIndex="-1"
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow lg:hidden"
               >
