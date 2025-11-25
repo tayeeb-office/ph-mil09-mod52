@@ -17,6 +17,7 @@ import Loading from './Pages/Loading.jsx';
 import Provider from './Provider/Provider.jsx';
 import GameDetails from './Pages/GameDetails.jsx';
 import Details from './Pages/Details.jsx';
+import PrivateRoute from './Provider/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,12 +34,12 @@ const router = createBrowserRouter([
       },
       {  
         path : '/game/:id',
-        Component : GameDetails,
+        element: <PrivateRoute> <GameDetails></GameDetails> </PrivateRoute>,
         loader : () => fetch("/popular.json")
       },
       {  
         path : '/games/:id',
-        Component : Details,
+        element: <PrivateRoute> <Details></Details> </PrivateRoute>,
         loader : () => fetch("/data.json")
       },
        {  

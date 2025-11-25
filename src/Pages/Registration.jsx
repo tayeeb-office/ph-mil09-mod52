@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { MdOutlineDownloadDone } from "react-icons/md";
 import { AuthContext } from "../Provider/Provider";
 import { updateProfile } from "firebase/auth";
@@ -12,6 +12,9 @@ const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const { register, setUser, google } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
 
   const handelSubmit = (e) => {
     e.preventDefault();
@@ -30,6 +33,7 @@ const Registration = () => {
         })
           .then(() => {
             setUser(userCredential.user);
+            navigate("/");
           })
           .catch((error) => {
             console.log(error);
@@ -47,6 +51,7 @@ const Registration = () => {
     .then(res => {
         const user = res.user;
         setUser(user);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error)

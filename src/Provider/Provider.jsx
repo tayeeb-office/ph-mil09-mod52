@@ -35,7 +35,8 @@ const Provider = ({children}) => {
         register,
         user, 
         setUser,
-        google
+        google,
+        loading
     }
 
     return (
