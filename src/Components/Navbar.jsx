@@ -2,10 +2,17 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router";
 import logo from "../assets/logo.png";
 import { AuthContext } from "../Provider/Provider";
+import { signOut } from "firebase/auth";
+import auth from "../Firebase/firebase.config";
 
 const Navbar = () => {
 
   const { user } = useContext(AuthContext);
+
+  const handelSignOut = () => {
+    signOut(auth);
+  }
+
 
   return (
     <div className="md:w-6xl mx-auto py-[10px] bg-[#101622] sticky top-0 z-50 ">
@@ -35,7 +42,10 @@ const Navbar = () => {
                   All Games
                 </NavLink>
               </li>
-              <li>
+              
+              {
+                !user && 
+                <li>
                 <NavLink
                   to="/registration"
                   className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
@@ -43,6 +53,9 @@ const Navbar = () => {
                   Registration
                 </NavLink>
               </li>
+              }
+                  
+              { !user &&
               <li>
                 <NavLink
                   to="/login"
@@ -51,6 +64,9 @@ const Navbar = () => {
                   Login
                 </NavLink>
               </li>
+              }              
+              
+              { user &&
               <li>
                 <NavLink
                   to="/profile"
@@ -59,6 +75,19 @@ const Navbar = () => {
                   Profile
                 </NavLink>
               </li>
+              }
+
+              { user &&
+              <li>
+                <NavLink
+                  onClick={handelSignOut}
+                  className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
+                >
+                  Log out
+                </NavLink>
+              </li>
+              }
+              
             </ul>
           </div>
 
