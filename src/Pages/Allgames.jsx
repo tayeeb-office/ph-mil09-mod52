@@ -1,14 +1,10 @@
 import React, { use } from "react";
-import { toast, ToastContainer } from "react-toastify";
-import { Link } from "react-router";
+import { Link, Links } from "react-router";
 
 const dataPromise = fetch("/data.json").then((res) => res.json());
 
 const Allgames = () => {
   const datas = use(dataPromise);
-
-  const notify = () => toast("Game Installed!");
-
   return (
     <div className="ml-[20px] md:w-6xl md:mx-auto">
       <div>
@@ -17,7 +13,7 @@ const Allgames = () => {
 
         <div className="py-[50px] grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20">
           {datas.map((dat) => (
-            <div className="w-[300px] bg-[#101622] ">
+            <div key={dat.id} className="w-[300px] bg-[#101622] ">
               <div>
                 <div className="card bg-base-100 w-[300px] md:w-96 shadow-sm h-[450px]">
                   <figure>
@@ -35,18 +31,16 @@ const Allgames = () => {
                     </p>
                     <div className="card-actions justify-center pt-[10px]">
                       <Link
-                        to={`/game/${dat.id}`}
+                        to={`/games/${dat.id}`}
                         className="btn  w-[150px] bg-[#4C80E6]"
                       >
                         View Details
                       </Link>
                       <button
-                        onClick={notify}
                         className="btn  w-[150px] bg-[#4C80E6]"
                       >
-                        Install Now
+                        <Link to={dat.downloadLink}>Install Now</Link>
                       </button>
-                      <ToastContainer />
                     </div>
                   </div>
                 </div>

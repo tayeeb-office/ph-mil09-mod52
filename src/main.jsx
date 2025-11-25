@@ -16,11 +16,12 @@ import Update from './Pages/Update.jsx';
 import Loading from './Pages/Loading.jsx';
 import Provider from './Provider/Provider.jsx';
 import GameDetails from './Pages/GameDetails.jsx';
+import Details from './Pages/Details.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root></Root>,
+    Component :Root,
     children : [
       { index: true, 
         path : '/',
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         path : '/game/:id',
         Component : GameDetails,
         loader : () => fetch("/popular.json")
+      },
+      {  
+        path : '/games/:id',
+        Component : Details,
+        loader : () => fetch("/data.json")
       },
        {  
         path : '/registration',
@@ -66,7 +72,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode >
      <Provider>
-      <RouterProvider router={router} />,
+      <RouterProvider router={router} />
      </Provider>
   </StrictMode>
 )
