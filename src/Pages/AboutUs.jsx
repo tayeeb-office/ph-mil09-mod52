@@ -3,6 +3,8 @@ import React from 'react';
 const AboutUs = () => {
     return (
      <div className=" text-white font-sans">
+
+      <title>About Us</title>
   
     <section
       className="relative flex mt-10 mb-16 items-center justify-center bg-cover bg-center"
