@@ -37,6 +37,14 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
+                  to="/aboutus"
+                  className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
+                >
+                  About Us
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   to="/allgames"
                   className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
                 >
@@ -130,6 +138,14 @@ const Navbar = () => {
                   className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
                 >
                   Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/aboutus"
+                  className="text-white hover:text-[#4C80E6] active:text-[#4C80E6]"
+                >
+                  About Us
                 </NavLink>
               </li>
               <li>

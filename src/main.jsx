@@ -18,6 +18,7 @@ import Provider from './Provider/Provider.jsx';
 import GameDetails from './Pages/GameDetails.jsx';
 import Details from './Pages/Details.jsx';
 import PrivateRoute from './Provider/PrivateRoute.jsx';
+import AboutUs from './Pages/AboutUs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       { index: true, 
         path : '/',
         Component: Home,
+      },
+      {
+        path : '/aboutus',
+        Component: AboutUs,
       },
       {  
         path : '/allgames',
