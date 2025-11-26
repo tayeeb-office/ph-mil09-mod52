@@ -11,6 +11,7 @@ const Home = () => {
 
   return (
     <div className="ml-[20px] md:w-6xl md:mx-auto">
+      <title>Home</title>
       
       <Hero></Hero>
 

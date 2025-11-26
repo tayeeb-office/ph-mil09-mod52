@@ -4,6 +4,7 @@ import { Link } from "react-router";
 const Error = () => {
   return (
     <div>
+      <title>404</title>
       <section className=" w-full flex items-center justify-center px-4 py-30">
         <div className="text-center max-w-2xl">
           

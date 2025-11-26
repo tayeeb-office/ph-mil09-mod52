@@ -4,6 +4,7 @@ import logo from "../assets/logo.png"; // your image
 export default function LoadingSpinner() {
   return (
     <div className="min-h-screen flex flex-col gap-8 items-center justify-center">
+      <title>Loading...</title>
       <motion.img
         src={logo}
         alt="loading"

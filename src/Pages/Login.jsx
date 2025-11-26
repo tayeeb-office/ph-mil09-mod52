@@ -10,6 +10,8 @@ import { AuthContext } from "../Provider/Provider";
 const Login = () => {
   
   const [showPassword, setShowPassword] = useState(false);
+  
+  const [email, setEmail] = useState("");
 
   const {setUser, user, google } = useContext(AuthContext);
 
@@ -48,8 +50,13 @@ const Login = () => {
       });
   }
 
+  const handelForget = () => {
+    navigate(`/reset/${email}`)
+  }
+
   return (
     <div>
+      <title>Login</title>
       <section className=" w-full flex items-center justify-center px-4 py-30">
         <div className="w-full max-w-md rounded-2xl bg-[#1A1E24]/90 shadow-2xl ring-1 ring-white/10 px-6 py-10">
           <div className="text-center">
@@ -68,6 +75,7 @@ const Login = () => {
                 Email Address
               </label>
               <input
+                onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 name="email"
                 placeholder="you@example.com"
@@ -101,12 +109,9 @@ const Login = () => {
             {/* Reset Pass */}
             <p className="mt-6 text-sm text-slate-400">
               Forgot Passoward?
-              <Link to="/reset">
-                <span className="text-blue-500 hover:text-blue-400 cursor-pointer font-semibold">
-                  {" "}
+              <span onClick={handelForget} className="text-blue-500 hover:text-blue-400 cursor-pointer font-semibold">
                   Click Here
-                </span>
-              </Link>
+              </span>
             </p>
 
             {/* Submit */}
@@ -130,7 +135,6 @@ const Login = () => {
             Don’t have an account?
             <Link to="/registration">
               <span className="text-blue-500 hover:text-blue-400 cursor-pointer font-semibold">
-                {" "}
                 Sign Up
               </span>
             </Link>

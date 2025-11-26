@@ -7,6 +7,7 @@ const Allgames = () => {
   const datas = use(dataPromise);
   return (
     <div className="ml-[20px] md:w-6xl md:mx-auto">
+      <title>All Games</title>
       <div>
 
         <h2 className="text-[22px] pt-[50px] ">ALL GAMES</h2>

@@ -51,7 +51,7 @@ const router = createBrowserRouter([
         Component: Login,
       },
       {  
-        path : '/reset',
+        path : '/reset/:email',
         Component: Resetpass,
       },
       {  

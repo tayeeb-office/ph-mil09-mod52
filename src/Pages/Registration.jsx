@@ -46,13 +46,13 @@ const Registration = () => {
   }
 
     register(email, pass)
-      .then((userCredential) => {
+      .then(() => {
         updateProfile(auth.currentUser, {
           displayName: username,
           photoURL: imageLink,
         })
           .then(() => {
-            setUser(userCredential.user);
+           setUser({ ...auth.currentUser });
             navigate("/");
           })
           .catch((error) => {
@@ -80,6 +80,7 @@ const Registration = () => {
 
   return (
     <div>
+      <title>Registration</title>
       <section className=" w-full flex items-center justify-center px-4 py-30">
         <div className="w-full max-w-md rounded-2xl bg-[#1A1E24]/90 shadow-2xl ring-1 ring-white/10 px-6 py-10">
           <div className="text-center">

@@ -9,6 +9,7 @@ const Profile = () => {
 
   return (
     <div>
+      <title>Profile</title>
       <div className=" flex items-center justify-center px-6 py-30">
         <div className="w-[280px] rounded-2xl bg-[#1A1E24] shadow-2xl px-6 py-8 flex flex-col items-center">
           <div className="relative">

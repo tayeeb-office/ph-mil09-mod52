@@ -30,6 +30,7 @@ const Update = () => {
 
     return (
         <div>
+          <title>Update Profile</title>
             <section className=" w-full flex items-center justify-center px-4 py-30">
             <div className="w-full max-w-md rounded-2xl bg-[#1A1E24]/90 shadow-2xl ring-1 ring-white/10 px-6 py-10">
               

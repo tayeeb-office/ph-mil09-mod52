@@ -16,6 +16,7 @@ const GameDetails = () => {
 
   return (
     <div>
+      <title>Details</title>
       <div className=" text-slate-100">
         <main className="mx-auto w-full max-w-6xl px-4 py-8 md:px-6">
           <section className="relative  rounded-2xl">
